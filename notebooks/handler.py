@@ -1,16 +1,16 @@
 import pickle
 import pandas as pd
 from flask import Flask, request, Response
-from healthinsurance import HealthInsurance
+from HealthInsurance import HealthInsurance
 
 # carregando o modelo
-path = 'C:\\Users\\raquel\\Documents\\Comunidade DS\\repos\\06-PA-Health-Insurance-Cross-Sell\\health_insurance_ross_sell\\'
-model = pickle.load(open(path + 'src/models/model_health_insurance.pkl', 'rb'))
+path = r'C:\Users\raquel\Documents\Comunidade DS\repos\06-PA-Health-Insurance-Cross-Sell\health_insurance\health_insurance_ross_sell'
+model = pickle.load(open(path + r'\src\models\model_linear_regression.pkl', 'rb'))
 
 # inicializando a API
 app = Flask(__name__)
 
-@app.route('/heathinsurance/predict', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def health_insurance_predict():
     test_json = request.get_json()
 
