@@ -54,33 +54,33 @@ Minha estratégia para resolver esse desafio foi a seguinte:
 
 **1. Entendimento dos Dados**
 
-    **1.1** Descrição dos Dados:  Neste passo, o objetivo é compreender os dados disponíveis e suas características. Isso envolve examinar as variáveis presentes, entender seu significado e identificar possíveis problemas, como dados faltantes ou inconsistências.
+**1.1** Descrição dos Dados:  Neste passo, o objetivo é compreender os dados disponíveis e suas características. Isso envolve examinar as variáveis presentes, entender seu significado e identificar possíveis problemas, como dados faltantes ou inconsistências.
     
-    **1.2** Feature Engineering: Aqui, o foco é identificar e criar novas variáveis relevantes para a análise de propensão. Isso pode envolver a combinação de variáveis existentes, a criação de variáveis derivadas ou a seleção de atributos específicos que tenham maior impacto na previsão.
+**1.2** Feature Engineering: Aqui, o foco é identificar e criar novas variáveis relevantes para a análise de propensão. Isso pode envolver a combinação de variáveis existentes, a criação de variáveis derivadas ou a seleção de atributos específicos que tenham maior impacto na previsão.
     
-    **1.3** Filtragem de Variáveis: Nesta etapa, o objetivo é filtrar os dados para remover informações irrelevantes ou duplicadas. Isso ajuda a reduzir a complexidade dos dados e a melhorar a eficiência do modelo.
+**1.3** Filtragem de Variáveis: Nesta etapa, o objetivo é filtrar os dados para remover informações irrelevantes ou duplicadas. Isso ajuda a reduzir a complexidade dos dados e a melhorar a eficiência do modelo.
     
-    **1.4** Análise Exploratória de Dados: Aqui, realiza-se uma exploração mais aprofundada dos dados para identificar padrões, tendências e insights relevantes. Isso pode envolver a visualização dos dados, a análise de correlações entre variáveis e a identificação de possíveis relações entre os atributos e a variável alvo.
+**1.4** Análise Exploratória de Dados: Aqui, realiza-se uma exploração mais aprofundada dos dados para identificar padrões, tendências e insights relevantes. Isso pode envolver a visualização dos dados, a análise de correlações entre variáveis e a identificação de possíveis relações entre os atributos e a variável alvo.
 
 **2. Preparação dos Dados**
 
-    **2.1** Pré-processamento: Neste passo, os dados são preparados para a modelagem. Isso inclui o tratamento de valores ausentes, a codificação de variáveis categóricas, a normalização ou padronização dos dados e outras transformações necessárias para garantir a qualidade e a consistência dos dados.
+**2.1** Pré-processamento: Neste passo, os dados são preparados para a modelagem. Isso inclui o tratamento de valores ausentes, a codificação de variáveis categóricas, a normalização ou padronização dos dados e outras transformações necessárias para garantir a qualidade e a consistência dos dados.
     
-    **2.2** Seleção de Features: Aqui, selecionam-se as variáveis mais relevantes para a análise de propensão. Isso pode ser feito com base em técnicas estatísticas, como análise de correlação, ou algoritmos específicos de seleção de atributos, que ajudam a identificar as variáveis mais informativas para o modelo.
+**2.2** Seleção de Features: Aqui, selecionam-se as variáveis mais relevantes para a análise de propensão. Isso pode ser feito com base em técnicas estatísticas, como análise de correlação, ou algoritmos específicos de seleção de atributos, que ajudam a identificar as variáveis mais informativas para o modelo.
 
 **3. Modelagem**
 
-    **3.1** Modelagem de Machine Learning: Neste passo, desenvolve-se um modelo de aprendizado de máquina para prever a propensão de um cliente adquirir um seguro de carro. Isso envolve a escolha do algoritmo adequado, o treinamento do modelo com os dados preparados e a avaliação do desempenho do modelo.
+**3.1** Modelagem de Machine Learning: Neste passo, desenvolve-se um modelo de aprendizado de máquina para prever a propensão de um cliente adquirir um seguro de carro. Isso envolve a escolha do algoritmo adequado, o treinamento do modelo com os dados preparados e a avaliação do desempenho do modelo.
     
-    **3.2** Ajuste de Hiperparâmetros:Aqui, realiza-se o ajuste dos hiperparâmetros do modelo com o objetivo de otimizar seu desempenho. Isso pode ser feito por meio de técnicas como validação cruzada e busca em grade, que ajudam a encontrar a combinação ideal de hiperparâmetros que maximizam o desempenho do modelo.
+**3.2** Ajuste de Hiperparâmetros:Aqui, realiza-se o ajuste dos hiperparâmetros do modelo com o objetivo de otimizar seu desempenho. Isso pode ser feito por meio de técnicas como validação cruzada e busca em grade, que ajudam a encontrar a combinação ideal de hiperparâmetros que maximizam o desempenho do modelo.
 
 **4. Avaliação e Desempenho de Negócios**
 
-    **4.1** Métricas de Desempenho: Avaliar o desempenho do modelo com base em métricas relevantes para o negócio, como taxa de conversão e retorno sobre o investimento.
+**4.1** Métricas de Desempenho: Avaliar o desempenho do modelo com base em métricas relevantes para o negócio, como taxa de conversão e retorno sobre o investimento.
     
 **5. Implantação**
 
-    **5.1** Implantação do Modelo em Produção: Implementar o modelo em um ambiente de produção para uso contínuo.
+**5.1** Implantação do Modelo em Produção: Implementar o modelo em um ambiente de produção para uso contínuo.
 
 
 ## 4. Entendimento dos Dados
