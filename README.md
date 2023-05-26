@@ -30,26 +30,25 @@ O resultado final do projeto é uma planilha interativa criada no Google Sheets 
 ### 3.2 Ferramentas utilizadas
 Para o desenvolvimento deste projeto, utilizamos as seguintes ferramentas:
 
-    Python: linguagem de programação popular e poderosa usada para desenvolver aplicativos de ciência de dados e aprendizado de máquina. Utilizamos bibliotecas como pandas, numpy, scikit-learn e scipy para manipulação e análise de dados, bem como para a construção do modelo de aprendizado de máquina.
+- Python: linguagem de programação popular e poderosa usada para desenvolver aplicativos de ciência de dados e aprendizado de máquina. Utilizamos bibliotecas como pandas, numpy, scikit-learn e scipy para manipulação e análise de dados, bem como para a construção do modelo de aprendizado de máquina.
     
-     API Flask: um micro-framework web usado para criar aplicativos da web em Python. Utilizamos o Flask para desenvolver uma API que permite a interação com o modelo de propensão e a integração com outras ferramentas.
+- API Flask: um micro-framework web usado para criar aplicativos da web em Python. Utilizamos o Flask para desenvolver uma API que permite a interação com o modelo de propensão e a integração com outras ferramentas.
 
-    Visual Studio Code: um editor de código-fonte que fornece recursos avançados para desenvolvimento, como depuração, controle de versão e integração com várias extensões. Utilizamos o Visual Studio Code como ambiente de desenvolvimento principal.
+- Visual Studio Code: um editor de código-fonte que fornece recursos avançados para desenvolvimento, como depuração, controle de versão e integração com várias extensões. Utilizamos o Visual Studio Code como ambiente de desenvolvimento principal.
 
-    Anaconda: uma plataforma que contém várias bibliotecas e ferramentas importantes para análise de dados. Utilizamos o Anaconda para gerenciar nossos ambientes virtuais e instalar as bibliotecas necessárias para o projeto.
+- Anaconda: uma plataforma que contém várias bibliotecas e ferramentas importantes para análise de dados. Utilizamos o Anaconda para gerenciar nossos ambientes virtuais e instalar as bibliotecas necessárias para o projeto.
 
-    Git: um sistema de controle de versão amplamente utilizado para gerenciar alterações em arquivos de código-fonte. Utilizamos o Git para controlar o histórico de alterações em nosso projeto.
+- Git: um sistema de controle de versão amplamente utilizado para gerenciar alterações em arquivos de código-fonte. Utilizamos o Git para controlar o histórico de alterações em nosso projeto.
 
-    Render: utilizamos o Render para hospedar nossa aplicação web, que inclui a API Flask para interação com o modelo de propensão. A plataforma nos permitiu implantar e disponibilizar a aplicação de forma rápida e confiável, garantindo que ela esteja acessível aos usuários finais.
+- Render: utilizamos o Render para hospedar nossa aplicação web, que inclui a API Flask para interação com o modelo de propensão. A plataforma nos permitiu implantar e disponibilizar a aplicação de forma rápida e confiável, garantindo que ela esteja acessível aos usuários finais.
     
-    Google Sheets: utilizamos o Google Sheets como uma das ferramentas de visualização e apresentação dos resultados do projeto. A planilha interativa no Google Sheets permite visualizar e analisar os dados de propensão dos clientes de forma conveniente e compartilhável.
+- Google Sheets: utilizamos o Google Sheets como uma das ferramentas de visualização e apresentação dos resultados do projeto. A planilha interativa no Google Sheets permite visualizar e analisar os dados de propensão dos clientes de forma conveniente e compartilhável.
 
 
 ### 3.3 Desenvolvimento
 Neste projeto, seguimos a metodologia CRISP-DM (Cross Industry Process - Data Mining), que é amplamente adotada como padrão de processo analítico desde 1999. Desenvolvida por um consórcio de mais de 200 organizações interessadas em mineração de dados, essa metodologia é flexível e pode ser adaptada a diferentes métodos analíticos, incluindo Data Science.
 
 Embora a versão original da metodologia CRISP-DM seja composta por seis fases, optamos por utilizar uma versão estendida com dez fases para garantir uma abordagem mais abrangente e detalhada. Essas fases adicionais foram adicionadas para atender às necessidades específicas deste projeto e garantir a qualidade e a eficácia do processo analítico.
-
 
 Minha estratégia para resolver esse desafio foi a seguinte:
 
@@ -109,13 +108,29 @@ Nesta fase, não foi necessário realizar nenhum processo de filtragem de dados,
 
 ### 4.4 Data Analysis
 Durante esta fase, foi conduzida uma análise detalhada dos dados para obter insights significativos sobre as características dos clientes. Foram realizadas análises univariadas dos atributos numéricos e da variável resposta, além de análises bivariadas para examinar cada feature individualmente. Gráficos foram utilizados para facilitar a visualização dos resultados. Além disso, foi realizada uma análise multivariada dos atributos numéricos a fim de compreender melhor as relações entre as variáveis.
+ 
 
 **Principais Insights:**
 **1.** Os dados revelam a existência de 135 canais de vendas de apólice, abrangendo uma ampla variedade de opções para os clientes. No entanto, é interessante notar que os três principais canais de vendas de apólice concentram a maioria dos clientes captados, representando impressionantes 79,57% do total. Isso indica a importância de direcionar estratégias de marketing e vendas para esses canais mais efetivos, a fim de maximizar o alcance e o impacto das ações promocionais.
 
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/bivariate_analysis_policy_salles_channel.png" alt="bivariate_analysis_policy_salles_channel">
+</p>
+
+
 **2.** Uma descoberta relevante é a observação de que carros com mais de 2 anos apresentam uma taxa de conversão mais alta em comparação aos demais. Isso indica que os proprietários de veículos com maior tempo de uso estão mais propensos a adquirir um seguro de carro. Essa informação é valiosa para a definição de segmentação de mercado e criação de estratégias específicas para atrair esse público-alvo. 
 
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/bivariate_analysis_vehicle_age.png" alt="bivariate_analysis_vehicle_age">
+</p>
+
+
 **3.** Foi identificado que a faixa etária de 32 a 53 anos apresenta um interesse significativo na aquisição do seguro de carro. Essa faixa etária demonstra uma maior propensão em adquirir o seguro em comparação com outras faixas etárias. Isso sugere que estratégias de marketing direcionadas a esse grupo podem ser mais eficazes na promoção e venda do seguro automotivo.
+
+
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/bivariate_analysis_age.png" alt="bivariate_analysis_age">
+</p>
 
 
 
@@ -140,7 +155,7 @@ Além disso, utilizamos o método Boruta, que tem como objetivo identificar as f
 A figura a seguir exibe a importância das features.
 
 <p align="center">
-  <img src="https://github.com/raquelEllem/rossmann_store_sales/blob/main/rossmann_store_sales/img/ciclo_crisp.jpg" alt="">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/feature_importance.png" alt="feature_importance">
 </p>
 
 
@@ -154,15 +169,22 @@ Durante a análise, também foram utilizadas as Curvas de Ganhos Cumulativos, um
 A figura abaixo apresenta as Curvas de Ganhos obtidas nos modelos testados.
 
 
-# FIG curva
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/cumulative_gain_all.png" alt="cumulative_gain">
+</p>
+
 
 Também foi realizada a análise da Lift Curve, uma representação gráfica que compara a eficácia de um modelo preditivo com uma estimativa aleatória. Essa métrica é comumente utilizada em marketing e gerenciamento de relacionamento com o cliente para avaliar o desempenho de modelos projetados para prever o comportamento do cliente. A seguir, é apresentado um gráfico com as curvas de lift dos modelos testados.
 
-# FIG LIFT
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/curvas_lift_all.png" alt="curvas_lift_all">
+</p>
 
 As métricas de desempenho, como Precision, Recall e F1-Score, foram utilizadas para avaliar a performance dos modelos, tanto para os modelos simples quanto para aqueles com cross-validation. A figura a seguir exibe uma tabela com os resultados obtidos por cada modelo.
 
-# FIG tabela CV ML
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/models_CV_metrics.png" alt="models_CV_metrics">
+</p>
 
 Durante a análise dos modelos de machine learning, observamos que o CatBoostClassifier apresentou valores mais altos em métricas como precision, bem como nas curvas lift e ganhos cumulativos.
 
@@ -184,7 +206,9 @@ Essa etapa de ajuste de hiperparâmetros é crucial para obter um modelo com des
 
 A figura abaixo apresenta a comparação dos três modelos utilizando métricas de avaliação.
 
-# FIG BEST model bs, rs ou sem nada
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/finetuning_xgb.png" alt="finetuning_xgb">
+</p>
 
 Após a avaliação dos resultados, o modelo XGBoost com ajuste de hiperparâmetros utilizando a técnica de Bayesian Search apresentou o melhor desempenho em termos de recall. 
 
@@ -208,19 +232,27 @@ A figura abaixo apresenta um gráfico com os valores das métricas obtidas pelo 
 - ROC AUC: A área sob a curva ROC (Receiver Operating Characteristic) é uma medida numérica que indica a capacidade do modelo de classificar corretamente as instâncias.
 
 
-# FIG grafico metricas todas xgb
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/model_metrics.png" alt="model_metrics">
+</p>
 
 O gráfico abaixo ilustra o poder discriminativo do modelo em identificar os clientes com maior probabilidade de compra em comparação com uma classificação aleatória. Ele representa a capacidade do modelo de distinguir entre clientes com maior propensão à compra e aqueles que não possuem essa característica. Quanto maior a distância entre a curva do modelo e a linha de referência aleatória, maior é a capacidade de classificação do modelo. 
 
-# FIG Cummulative Curve xgb 9
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/cumulative_curve_xgb.png" alt="cumulative_curve_xgb">
+</p>
 
 O gráfico abaixo representa a variação do lift em relação à porcentagem acumulada da base. Essa visualização é útil para identificar que o modelo apresenta um desempenho melhor em comparação com a situação de referência. 
 
-# FIG Lift Curve xgb 9
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/lift_curve_xgb.png" alt="lift_curve_xgb">
+</p>
 
 Abaixo, temos a curva ROI, que permite visualizar a melhoria relativa proporcionada pelo modelo em comparação com o baseline ao longo da porcentagem acumulada da base. Essa curva é útil para avaliar o desempenho do modelo em termos de retorno esperado. A curva ROI mostra como o modelo supera as expectativas em relação à situação de referência, medida pelo baseline. Ela mostra a proporção acumulada do retorno esperado ao longo do tempo à medida que mais clientes são considerados. 
 
-# FIG ROI Curve xgb 9
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/roi_curve_xgb.png" alt="roi_curve_xgb">
+</p>
 
 
 ### 7.2 Bussiness Metrics
@@ -235,11 +267,16 @@ Detalhes do Cálculo:
 
 Na imagem abaixo podemos observar que é recomendado entrar em contato com 47% dos clientes, ordenados de acordo com a pontuação atribuída pelo modelo. Portanto, é estabelecido um limiar de pontuação de 0,02 para determinar quais clientes devem ser contatados.
 
-# FIG profit 10
+
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/best_profit.png" alt="best_profit">
+</p>
 
 Ao focar apenas nos clientes com maior propensão a comprar, a empresa tem a possibilidade de reduzir os custos de chamadas desnecessárias. Como resultado, a operação se torna 72,13% mais rentável devido à economia de custos obtida, como podemos ver no gráfico abaixo.
     
-# FIG costumers 10
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/selected_all_customers.png" alt="selected_all_customers">
+</p>
 
 ## 8. Deployment
 Após a validação do modelo de geração de ranking, o próximo passo foi disponibilizá-lo aos usuários finais por meio de uma API. Essa API foi desenvolvida utilizando o módulo Flask e está contida no arquivo 'handler.py'. Com essa API, os usuários têm a capacidade de obter o ranking dos clientes com scores precisos e atualizados.
@@ -247,6 +284,11 @@ Após a validação do modelo de geração de ranking, o próximo passo foi disp
 A API é responsável por carregar o modelo treinado e a classe HealthInsurance foi criada para preparar e transformar os dados necessários antes de serem fornecidos ao modelo para a geração dos scores. Essa preparação e transformação garantem que os dados estejam em um formato adequado para serem processados pelo modelo.
 
 O modelo selecionado foi implantado em um ambiente de nuvem, tornando-o acessível para outras pessoas ou serviços. Isso permite que eles utilizem os resultados gerados pelo modelo para aprimorar a tomada de decisões de negócios. Para facilitar o acesso e o compartilhamento dos resultados, utilizamos o Google Sheets, uma plataforma que permite o armazenamento e a visualização dos dados gerados pelo modelo em tempo real. Dessa forma, as informações estão disponíveis de maneira rápida e prática para os usuários que necessitam delas, facilitando a colaboração e a utilização dos resultados em diferentes contextos de negócios.
+
+<p align="center">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/deploy_healthInsuance.png" alt="deploy_healthInsuance">
+</p>
+
 
 O produto final é um documento de planilha vinculado ao modelo de aprendizado de máquina implantado. Este documento fornece uma lista de clientes com probabilidade de comprar seguro de carro, com base nas previsões feitas pelo modelo. Para obter as previsões, basta inserir os dados do cliente, clicar em "Health Insurance Prediction" - "Get Prediction". Assim a planilha se conectará com o modelo implantado e retornará a pontuação, com a previsão, destacando os clientes que devem receber a oferta. Essa integração entre a planilha e o modelo permite uma análise fácil e eficiente dos clientes com maior potencial de compra, auxiliando nas estratégias de oferta e aumentando as chances de sucesso nas vendas. 
 Veja o funcionamento na demonstração abaixo:
