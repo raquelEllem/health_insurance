@@ -297,8 +297,9 @@ A API é responsável por carregar o modelo treinado e a classe HealthInsurance 
 O modelo selecionado foi implantado em um ambiente de nuvem, tornando-o acessível para outras pessoas ou serviços. Isso permite que eles utilizem os resultados gerados pelo modelo para aprimorar a tomada de decisões de negócios. Para facilitar o acesso e o compartilhamento dos resultados, utilizamos o Google Sheets, uma plataforma que permite o armazenamento e a visualização dos dados gerados pelo modelo em tempo real. Dessa forma, as informações estão disponíveis de maneira rápida e prática para os usuários que necessitam delas, facilitando a colaboração e a utilização dos resultados em diferentes contextos de negócios.
 
 <p align="center">
-  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/deploy_healthInsuance.png" alt="deploy_healthInsuance">
+  <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/deploy_healthInsuance.png" alt="deploy_healthInsuance" width="500">
 </p>
+
 
 
 O produto final é um documento de planilha vinculado ao modelo de aprendizado de máquina implantado. Este documento fornece uma lista de clientes com probabilidade de comprar seguro de carro, com base nas previsões feitas pelo modelo. Para obter as previsões, basta inserir os dados do cliente, clicar em "Health Insurance Prediction" - "Get Prediction". Assim a planilha se conectará com o modelo implantado e retornará a pontuação, com a previsão, destacando os clientes que devem receber a oferta. Essa integração entre a planilha e o modelo permite uma análise fácil e eficiente dos clientes com maior potencial de compra, auxiliando nas estratégias de oferta e aumentando as chances de sucesso nas vendas. 
