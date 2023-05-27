@@ -1,97 +1,101 @@
 # Health Insurance Cross Sell Prediction
 
-## 1. Problema de Negócio
-O problema de negócio consiste em identificar potenciais clientes que têm maior probabilidade de adquirir um seguro de carro (cross-sell) a fim de direcionar esforços de marketing e vendas de forma mais eficiente. A empresa Golden Shield deseja recomendar o seguro de carro apenas para os clientes que apresentam maior interesse nesse produto. Isso permitirá que o time de marketing faça campanhas direcionadas para os potenciais clientes com maior probabilidade de adquirir o seguro de carro. Como cientista de dados da Golden Shield, a tarefa é desenvolver um modelo preditivo para determinar a propensão de um cliente em adquirir um seguro de veículo.
+## 1. Business Problem
 
-| Problema  | Objetivo | Questão principal |
+The business problem consists of identifying potential customers who are more likely to purchase a car insurance (cross-sell) in order to direct marketing and sales efforts more efficiently. The company Golden Shield wishes to recommend car insurance only to customers who show a higher interest in this product. This will allow the marketing team to create targeted campaigns for potential customers with a higher likelihood of purchasing car insurance. As a data scientist at Golden Shield, the task is to develop a predictive model to determine a customer's propensity to acquire a vehicle insurance.
+
+| Problem  | Objective | Key Question |
 |-----------|----------|------------------|
-| Identificar potenciais clientes interessados em seguro de carro | Direcionar esforços de marketing e vendas de forma mais eficiente | Quais são os clientes do seguro de saúde que têm maior probabilidade de adquirir um seguro de carro? |
+| Identify potential customers interested in car insurance | Direct marketing and sales efforts more efficiently | Which health insurance customers are more likely to acquire car insurance? |
 
 
-## 2. Premissas de Negócio
-A etapa inicial desse projeto foi selecionar uma amostra de clientes e realizar uma pesquisa para avaliar seu interesse pelo novo produto, o seguro de carro. Os dados coletados sobre suas preferências, necessidades e intenções de compra, possibilitam construir um modelo para prever a propensão de cada cliente a comprar um seguro de carro.
+## 2. Business Assumptions
 
-Além disso, foram realizadas pesquisas preliminares sobre o mercado de seguros para obter informações sobre as tendências do setor e o comportamento do cliente. Os resultados desta pesquisa foram documentados em um caderno e servem como informações para o desenvolvimento do modelo.
+The initial step of this project was to select a sample of customers and conduct a survey to assess their interest in the new product, car insurance. The data collected about their preferences, needs, and purchase intentions allow building a model to predict the propensity of each customer to purchase car insurance.
 
-Os dados de resposta dos clientes interessados já foram coletados e estão prontamente disponíveis para o desenvolvimento do modelo. No entanto, para aproveitar esses dados de forma eficaz, eles foram armazenados em um banco de dados SQL para posterior análise e modelagem.
+Additionally, preliminary research on the insurance market was conducted to gather information about industry trends and customer behavior. The results of this research were documented in a notebook and serve as insights for the development of the model.
 
-Antes de prosseguir com o projeto, fizemos algumas suposições sobre o contexto de negócios e a disponibilidade de dados. Essas suposições são as seguintes:
+The response data from interested customers has already been collected and is readily available for model development. However, to leverage this data effectively, it has been stored in a SQL database for further analysis and modeling.
 
-- A lista de potenciais clientes contém os dados necessários para a análise de propensão: Partimos do pressuposto de que o conjunto de dados que possuímos inclui informações relevantes sobre os clientes, como dados demográficos, histórico de compras anteriores e outras variáveis que nos permitirão avaliar a probabilidade de cada cliente adquirir um seguro de carro.
+Before proceeding with the project, we made some assumptions about the business context and data availability. These assumptions are as follows:
 
-- A pontuação de propensão é um indicador confiável: Consideramos que a pontuação de propensão, calculada com base nos dados do cliente e em técnicas de modelagem preditiva, é um indicador confiável da probabilidade de um cliente adquirir um seguro de carro. Quanto maior a pontuação, maior a probabilidade de conversão.
+- The list of potential customers contains the necessary data for propensity analysis: We assume that the dataset we possess includes relevant information about the customers, such as demographic data, past purchase history, and other variables that will allow us to assess the likelihood of each customer acquiring car insurance.
 
-- A ordenação da lista de potenciais clientes com base na pontuação de propensão aumentará a taxa de conversão: Partimos do princípio de que, ao ordenar a lista de potenciais clientes em ordem decrescente de suas pontuações de propensão, poderemos priorizar aqueles com pontuações mais altas, direcionando nossos esforços de marketing e vendas de forma mais eficaz. Esperamos, assim, aumentar a taxa de conversão e otimizar a alocação de recursos.
+- The propensity score is a reliable indicator: We consider that the propensity score, calculated based on customer data and predictive modeling techniques, is a reliable indicator of the likelihood of a customer acquiring car insurance. The higher the score, the higher the conversion probability.
 
-## 3. Estratégia da solução
-### 3.1 Produto Final
-O resultado final do projeto é uma planilha interativa criada no Google Sheets que apresenta a propensão de cada cliente em adquirir um seguro de carro. A planilha fornece uma pontuação de propensão para cada cliente com base nos dados disponíveis, permitindo uma análise rápida e eficiente das oportunidades de cross-sell. Através dessa planilha, a equipe de marketing e vendas pode identificar e priorizar os potenciais clientes mais propensos a adquirir um seguro de carro, direcionando seus esforços de forma mais estratégica e aumentando a eficácia das ações de vendas.
+- Ordering the list of potential customers based on the propensity score will increase the conversion rate: We assume that by ordering the list of potential customers in descending order of their propensity scores, we can prioritize those with higher scores, directing our marketing and sales efforts more effectively. We expect this to increase the conversion rate and optimize resource allocation.
 
-### 3.2 Ferramentas utilizadas
-Para o desenvolvimento deste projeto, utilizamos as seguintes ferramentas:
 
-- Python: linguagem de programação popular e poderosa usada para desenvolver aplicativos de ciência de dados e aprendizado de máquina. Utilizamos bibliotecas como pandas, numpy, scikit-learn e scipy para manipulação e análise de dados, bem como para a construção do modelo de aprendizado de máquina.
+
+## 3. Solution Strategy
+### 3.1 Final Product
+The final outcome of the project is an interactive Google Sheets spreadsheet that presents the propensity of each customer to acquire car insurance. The spreadsheet provides a propensity score for each customer based on the available data, enabling a quick and efficient analysis of cross-sell opportunities. Through this spreadsheet, the marketing and sales team can identify and prioritize potential customers who are more likely to purchase car insurance, directing their efforts in a more strategic manner and increasing the effectiveness of sales actions.
+
+### 3.2 Tools Used
+For the development of this project, we utilized the following tools:
+
+- Python: a popular and powerful programming language used for developing data science and machine learning applications. We used libraries such as pandas, numpy, scikit-learn, and scipy for data manipulation and analysis, as well as for building the machine learning model.
     
-- API Flask: um micro-framework web usado para criar aplicativos da web em Python. Utilizamos o Flask para desenvolver uma API que permite a interação com o modelo de propensão e a integração com outras ferramentas.
+- Flask API: a web micro-framework used for creating web applications in Python. We used Flask to develop an API that allows interaction with the propensity model and integration with other tools.
 
-- Visual Studio Code: um editor de código-fonte que fornece recursos avançados para desenvolvimento, como depuração, controle de versão e integração com várias extensões. Utilizamos o Visual Studio Code como ambiente de desenvolvimento principal.
+- Visual Studio Code: a source code editor that provides advanced features for development, such as debugging, version control, and integration with various extensions. We used Visual Studio Code as the primary development environment.
 
-- Anaconda: uma plataforma que contém várias bibliotecas e ferramentas importantes para análise de dados. Utilizamos o Anaconda para gerenciar nossos ambientes virtuais e instalar as bibliotecas necessárias para o projeto.
+- Anaconda: a platform that contains various libraries and tools essential for data analysis. We used Anaconda to manage our virtual environments and install the necessary libraries for the project.
 
-- Git: um sistema de controle de versão amplamente utilizado para gerenciar alterações em arquivos de código-fonte. Utilizamos o Git para controlar o histórico de alterações em nosso projeto.
+- Git: a widely used version control system for managing changes to source code files. We used Git to track the history of changes in our project.
 
-- Render: utilizamos o Render para hospedar nossa aplicação web, que inclui a API Flask para interação com o modelo de propensão. A plataforma nos permitiu implantar e disponibilizar a aplicação de forma rápida e confiável, garantindo que ela esteja acessível aos usuários finais.
+- Render: we utilized Render to host our web application, which includes the Flask API for interacting with the propensity model. The platform allowed us to deploy and make the application available quickly and reliably, ensuring accessibility to end users.
     
-- Google Sheets: utilizamos o Google Sheets como uma das ferramentas de visualização e apresentação dos resultados do projeto. A planilha interativa no Google Sheets permite visualizar e analisar os dados de propensão dos clientes de forma conveniente e compartilhável.
+- Google Sheets: we used Google Sheets as one of the visualization and presentation tools for the project results. The interactive spreadsheet in Google Sheets enables convenient and shareable viewing and analysis of customer propensity data.
 
 
-### 3.3 Desenvolvimento
-Neste projeto, seguimos a metodologia CRISP-DM (Cross Industry Process - Data Mining), que é amplamente adotada como padrão de processo analítico desde 1999. Desenvolvida por um consórcio de mais de 200 organizações interessadas em mineração de dados, essa metodologia é flexível e pode ser adaptada a diferentes métodos analíticos, incluindo Data Science.
+### 3.3 Development
+In this project, we followed the CRISP-DM (Cross Industry Process - Data Mining) methodology, which has been widely adopted as a standard analytical process since 1999. Developed by a consortium of over 200 organizations interested in data mining, this methodology is flexible and can be adapted to different analytical methods, including Data Science.
 
-Embora a versão original da metodologia CRISP-DM seja composta por seis fases, optamos por utilizar uma versão estendida com dez fases para garantir uma abordagem mais abrangente e detalhada. Essas fases adicionais foram adicionadas para atender às necessidades específicas deste projeto e garantir a qualidade e a eficácia do processo analítico.
+Although the original version of the CRISP-DM methodology consists of six phases, we chose to use an extended version with ten phases to ensure a comprehensive and detailed approach. These additional phases were added to meet the specific needs of this project and ensure the quality and effectiveness of the analytical process.
 
-Minha estratégia para resolver esse desafio foi a seguinte:
+My strategy to solve this challenge was as follows:
 
-**1. Entendimento dos Dados**
+#### 1. Data Understanding
 
-**1.1** Descrição dos Dados:  Neste passo, o objetivo é compreender os dados disponíveis e suas características. Isso envolve examinar as variáveis presentes, entender seu significado e identificar possíveis problemas, como dados faltantes ou inconsistências.
+**1.1  Data Description:** In this step, the goal is to understand the available data and its characteristics. This involves examining the variables present, understanding their meaning, and identifying possible issues such as missing data or inconsistencies.
     
-**1.2** Feature Engineering: Aqui, o foco é identificar e criar novas variáveis relevantes para a análise de propensão. Isso pode envolver a combinação de variáveis existentes, a criação de variáveis derivadas ou a seleção de atributos específicos que tenham maior impacto na previsão.
+**1.2 Feature Engineering:** Here, the focus is on identifying and creating new variables relevant to the propensity analysis. This may involve combining existing variables, creating derived variables, or selecting specific attributes that have a greater impact on the prediction.
     
-**1.3** Filtragem de Variáveis: Nesta etapa, o objetivo é filtrar os dados para remover informações irrelevantes ou duplicadas. Isso ajuda a reduzir a complexidade dos dados e a melhorar a eficiência do modelo.
+**1.3 Variable Filtering:** In this step, the aim is to filter the data to remove irrelevant or duplicate information. This helps reduce the complexity of the data and improve the efficiency of the model.
     
-**1.4** Análise Exploratória de Dados: Aqui, realiza-se uma exploração mais aprofundada dos dados para identificar padrões, tendências e insights relevantes. Isso pode envolver a visualização dos dados, a análise de correlações entre variáveis e a identificação de possíveis relações entre os atributos e a variável alvo.
+**1.4Exploratory Data Analysis:** Here, a more in-depth exploration of the data is conducted to identify patterns, trends, and relevant insights. This may involve visualizing the data, analyzing correlations between variables, and identifying potential relationships between the attributes and the target variable.
 
-**2. Preparação dos Dados**
+#### 2. Data Preparation
 
-**2.1** Pré-processamento: Neste passo, os dados são preparados para a modelagem. Isso inclui o tratamento de valores ausentes, a codificação de variáveis categóricas, a normalização ou padronização dos dados e outras transformações necessárias para garantir a qualidade e a consistência dos dados.
+**2.1 Preprocessing:** In this step, the data is prepared for modeling. This includes handling missing values, encoding categorical variables, normalizing or standardizing the data, and other transformations necessary to ensure data quality and consistency.
     
-**2.2** Seleção de Features: Aqui, selecionam-se as variáveis mais relevantes para a análise de propensão. Isso pode ser feito com base em técnicas estatísticas, como análise de correlação, ou algoritmos específicos de seleção de atributos, que ajudam a identificar as variáveis mais informativas para o modelo.
+**2.2 Feature Selection:** Here, the most relevant variables for propensity analysis are selected. This can be done based on statistical techniques such as correlation analysis or specific feature selection algorithms, which help identify the most informative variables for the model.
 
-**3. Modelagem**
+#### 3. Modeling
 
-**3.1** Modelagem de Machine Learning: Neste passo, desenvolve-se um modelo de aprendizado de máquina para prever a propensão de um cliente adquirir um seguro de carro. Isso envolve a escolha do algoritmo adequado, o treinamento do modelo com os dados preparados e a avaliação do desempenho do modelo.
+**3.1 Machine Learning Modeling:** In this step, a machine learning model is developed to predict the propensity of a customer to acquire car insurance. This involves choosing the appropriate algorithm, training the model with the prepared data, and evaluating the model's performance.
     
-**3.2** Ajuste de Hiperparâmetros:Aqui, realiza-se o ajuste dos hiperparâmetros do modelo com o objetivo de otimizar seu desempenho. Isso pode ser feito por meio de técnicas como validação cruzada e busca em grade, que ajudam a encontrar a combinação ideal de hiperparâmetros que maximizam o desempenho do modelo.
+**3.2 Hyperparameter Tuning:** Here, the model's hyperparameters are tuned to optimize its performance. This can be done using techniques such as cross-validation and grid search, which help find the optimal combination of hyperparameters that maximize the model's performance.
 
-**4. Avaliação e Desempenho de Negócios**
+#### 4. Evaluation and Business Performance
 
-**4.1** Métricas de Desempenho: Avaliar o desempenho do modelo com base em métricas relevantes para o negócio, como taxa de conversão e retorno sobre o investimento.
+**4.1 Performance Metrics:** Evaluate the model's performance based on relevant metrics for the business, such as conversion rate and return on investment.
     
-**5. Implantação**
+#### 5. Deployment
 
-**5.1** Implantação do Modelo em Produção: Implementar o modelo em um ambiente de produção para uso contínuo.
+**5.1 Model Deployment in Production:** Implement the model in a production environment for ongoing use.
 
 
-## 4. Entendimento dos Dados
-A primeira etapa deste processo é dedicada à obtenção e compreensão dos dados. Durante essa etapa, buscamos identificar e criar novas variáveis relevantes para a análise de propensão, além de realizar a filtragem dos dados para eliminar informações irrelevantes ou duplicadas. É nesse momento que aprofundamos nossa exploração dos dados, em busca de padrões, tendências e insights significativos. Utilizamos técnicas estatísticas e visualizações para identificar correlações entre as variáveis, validar hipóteses existentes e descobrir novos insights que possam contribuir para o desenvolvimento do modelo de propensão. Essas etapas de compreensão dos dados são cruciais para garantir um entendimento sólido dos dados disponíveis e das características relevantes para o projeto. Essa compreensão nos permite tomar decisões embasadas ao longo do processo de modelagem e obter resultados mais precisos na previsão da propensão dos clientes.
+## 4. Data Understanding
+The first stage of this process is dedicated to data acquisition and understanding. During this stage, we aim to identify and create new relevant variables for propensity analysis, as well as filter the data to eliminate irrelevant or duplicate information. This is the moment where we delve deeper into data exploration, searching for patterns, trends, and significant insights. We employ statistical techniques and visualizations to identify correlations between variables, validate existing hypotheses, and discover new insights that can contribute to the development of the propensity model. These data understanding steps are crucial to ensure a solid understanding of the available data and the relevant characteristics for the project. This understanding enables us to make informed decisions throughout the modeling process and obtain more accurate results in predicting customer propensity.
 
-O conjunto de dados utilizado neste projeto foi obtido a partir da plataforma Kaggle. O conjunto de dados específico pode ser acessado através do seguinte [link](https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction?select=test.csv).
+The dataset used in this project was obtained from the Kaggle platform. The specific dataset can be accessed through the following [link](https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction?select=test.csv).
 
-### 4.1 Descrição dos Dados
-Nesta primeira fase, foram aplicadas técnicas, como a renomeação das colunas no formato snakecase e a identificação de valores faltantes (NaN). Além disso, foram utilizadas estatísticas descritivas para compreender a distribuição dos dados, tanto em termos de atributos numéricos quanto categóricos, permitindo assim a detecção de possíveis padrões e tendências.
+### 4.1 Data Description
+In this initial phase, techniques such as column renaming in snakecase format and identification of missing values (NaN) were applied. Additionally, descriptive statistics were used to understand the distribution of the data, both in terms of numerical and categorical attributes, allowing for the detection of possible patterns and trends.
 
-O conjunto de dados contém 19 atributos, conforme listados abaixo:
+The dataset contains 19 attributes, listed below:
 
 |       Variable       |                                                          Definition                                                         |
 |:--------------------:|:---------------------------------------------------------------------------------------------------------------------------:|
@@ -111,33 +115,31 @@ O conjunto de dados contém 19 atributos, conforme listados abaixo:
 
 
 ### 4.2  Feature Engineering
-O objetivo da Feature Engineering é aprimorar o desempenho dos modelos de aprendizado de máquina por meio da transformação e criação de novos recursos a partir dos dados disponíveis. Durante esta etapa, podem ser aplicadas operações matemáticas ou combinações significativas de recursos existentes para criar novos recursos. No âmbito deste projeto, foram realizadas transformações no DataFrame com o intuito de tornar os valores categóricos mais descritivos.
+The goal of Feature Engineering is to improve the performance of machine learning models through the transformation and creation of new features from the available data. During this stage, mathematical operations or meaningful combinations of existing features can be applied to create new ones. In the scope of this project, transformations were performed on the DataFrame in order to make categorical values more descriptive.
 
 ### 4.3 Data Filtering
-Nesta fase, não foi necessário realizar nenhum processo de filtragem de dados, pois as informações disponíveis já estavam adequadas e não havia necessidade de remoção de dados irrelevantes ou duplicados.
+In this phase, no data filtering process was required as the available information was already suitable, and there was no need to remove irrelevant or duplicate data.
 
 ### 4.4 Data Analysis
-Durante esta fase, foi conduzida uma análise detalhada dos dados para obter insights significativos sobre as características dos clientes. Foram realizadas análises univariadas dos atributos numéricos e da variável resposta, além de análises bivariadas para examinar cada feature individualmente. Gráficos foram utilizados para facilitar a visualização dos resultados. Além disso, foi realizada uma análise multivariada dos atributos numéricos a fim de compreender melhor as relações entre as variáveis.
- 
+During this phase, a detailed analysis of the data was conducted to gain meaningful insights into customer characteristics. Univariate analyses of numerical attributes and the target variable were performed, as well as bivariate analyses to examine each feature individually. Visualizations were used to facilitate the interpretation of the results. Additionally, a multivariate analysis of numerical attributes was conducted to better understand the relationships between variables.
 
-**Principais Insights:**
+**Insights:**
 
-**1.** Os dados revelam a existência de 135 canais de vendas de apólice, abrangendo uma ampla variedade de opções para os clientes. No entanto, é interessante notar que os três principais canais de vendas de apólice concentram a maioria dos clientes captados, representando impressionantes 79,57% do total. Isso indica a importância de direcionar estratégias de marketing e vendas para esses canais mais efetivos, a fim de maximizar o alcance e o impacto das ações promocionais.
+**1.** The data reveals the existence of 135 policy sales channels, covering a wide range of options for customers. However, it is interesting to note that the top three policy sales channels account for the majority of acquired customers, representing an impressive 79.57% of the total. This highlights the importance of directing marketing and sales strategies towards these most effective channels to maximize the reach and impact of promotional activities.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/bivariate_analysis_policy_salles_channel.png" alt="bivariate_analysis_policy_salles_channel">
 </p>
 
 
-**2.** Uma descoberta relevante é a observação de que carros com mais de 2 anos apresentam uma taxa de conversão mais alta em comparação aos demais. Isso indica que os proprietários de veículos com maior tempo de uso estão mais propensos a adquirir um seguro de carro. Essa informação é valiosa para a definição de segmentação de mercado e criação de estratégias específicas para atrair esse público-alvo. 
+**2.** A relevant finding is the observation that cars over 2 years old have a higher conversion rate compared to others. This indicates that owners of vehicles with longer usage time are more likely to purchase car insurance. This information is valuable for market segmentation definition and the creation of specific strategies to attract this target audience.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/bivariate_analysis_vehicle_age.png" alt="bivariate_analysis_vehicle_age">
 </p>
 
 
-**3.** Foi identificado que a faixa etária de 32 a 53 anos apresenta um interesse significativo na aquisição do seguro de carro. Essa faixa etária demonstra uma maior propensão em adquirir o seguro em comparação com outras faixas etárias. Isso sugere que estratégias de marketing direcionadas a esse grupo podem ser mais eficazes na promoção e venda do seguro automotivo.
-
+**3.** It has been identified that the age group from 32 to 53 years old shows significant interest in acquiring car insurance. This age group demonstrates a higher propensity to purchase insurance compared to other age groups. This suggests that marketing strategies targeted at this group may be more effective in promoting and selling car insurance.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/bivariate_analysis_age.png" alt="bivariate_analysis_age">
@@ -145,184 +147,182 @@ Durante esta fase, foi conduzida uma análise detalhada dos dados para obter ins
 
 
 
-## 5. Preparação dos Dados
-Na segunda etapa, foram realizados dois processos cruciais: o preparo dos dados e a seleção de features.
+## 5. Data Preparation
+In the second stage, two crucial processes were carried out: data preparation and feature selection.
 
 ### 5.1 Data Preparation
-Na fase de preparação dos dados, foram aplicadas transformações específicas nos dados para permitir que os modelos de Machine Learning aprendam o comportamento dos dados de forma mais eficiente. Algumas das transformações realizadas incluíram a padronização (standardization), o escalonamento (scaling) e a codificação (encoding).
+In the data preparation phase, specific transformations were applied to the data to allow Machine Learning models to learn the data behavior more efficiently. Some of the transformations performed included standardization, scaling, and encoding.
 
-A padronização é uma técnica que visa transformar os dados para que tenham média zero e desvio padrão igual a um, o que pode ser útil em certos algoritmos de aprendizado de máquina. O escalonamento, por sua vez, é usado para ajustar a escala dos dados, normalmente para um intervalo específico, como [0, 1] ou [-1, 1]. Isso é feito para evitar que as diferenças de escala entre as variáveis afetem a performance dos modelos.
+Standardization is a technique that aims to transform the data to have a mean of zero and a standard deviation of one, which can be useful in certain machine learning algorithms. Scaling, on the other hand, is used to adjust the scale of the data, typically to a specific range, such as [0, 1] or [-1, 1]. This is done to prevent scale differences between variables from affecting the performance of the models.
 
-A codificação é uma etapa importante quando lidamos com variáveis categóricas. Ela envolve a transformação dessas variáveis em representações numéricas, permitindo que os modelos de Machine Learning trabalhem com elas. 
+Encoding is an important step when dealing with categorical variables. It involves transforming these variables into numerical representations, allowing Machine Learning models to work with them.
 
-Após a aplicação dessas transformações, os objetos resultantes foram salvos em formato pickle. 
-Dessa forma, a preparação dos dados nesta fase buscou garantir que os modelos de Machine Learning tenham acesso aos dados transformados de maneira adequada, facilitando o aprendizado e a aplicação dos mesmos em situações futuras.
+After applying these transformations, the resulting objects were saved in pickle format. This way, the data preparation in this phase aimed to ensure that Machine Learning models have access to transformed data in an appropriate manner, facilitating their learning and application in future situations.
 
 ### 5.2 Feature Selection
-Durante esta fase, realizamos a seleção dos atributos mais significativos para o treinamento do modelo. Para isso, foram adotadas algumas estratégias. Primeiramente, removemos colunas consideradas irrelevantes para a análise. Em seguida, dividimos os dados em conjuntos de treinamento e teste, visando avaliar o desempenho do modelo em dados não vistos anteriormente.
+DDuring this phase, we performed the selection of the most significant attributes for model training. To achieve this, several strategies were adopted. Firstly, we removed columns considered irrelevant for the analysis. Then, we divided the data into training and testing sets to evaluate the model's performance on previously unseen data.
 
-Além disso, utilizamos o método Boruta, que tem como objetivo identificar as features mais relevantes para o modelo. No entanto, os resultados obtidos com o Boruta não foram satisfatórios, uma vez que apenas uma feature foi selecionada. Para contornar essa situação, empregamos o algoritmo ExtraTreesClassifier juntamente com a propriedade forest.feature_importances_. Essa abordagem nos permitiu identificar as features mais relevantes e, dessa forma, selecionamos as sete primeiras como atributos para o modelo.
+Additionally, we used the Boruta method, which aims to identify the most relevant features for the model. However, the results obtained with Boruta were not satisfactory, as only one feature was selected. To overcome this situation, we employed the ExtraTreesClassifier algorithm together with the forest.feature_importances_ property. This approach allowed us to identify the most relevant features, and thus we selected the first seven as attributes for the model.
 
-A figura a seguir exibe a importância das features.
+The following figure displays the importance of the features.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/feature_importance.png" alt="feature_importance">
 </p>
 
 
-## 6. Modelagem
-Nesta etapa, foram avaliados vários modelos de aprendizado de máquina e analisado o desempenho de cada um. Para otimizar os modelos, foram aplicadas técnicas específicas, como BayesianSearchCV e Random Search, a fim de encontrar a combinação ideal de hiperparâmetros que maximizasse o desempenho dos modelos.
+## 6. Modeling
+In this stage, several machine learning models were evaluated, and the performance of each one was analyzed. To optimize the models, specific techniques such as BayesianSearchCV and Random Search were applied to find the ideal combination of hyperparameters that maximize the models' performance.
 
 ### 6.1 Machine Learning Modelling
-A análise de diferentes modelos de Machine Learning, incluindo KNN Classifier, Logistic Regression, Extra Trees Classifier, Random Forest, XGBoost, LGBM e CatBoost, foi realizada nesta fase. Utilizou-se a técnica de cross-validation para avaliar o desempenho real de cada modelo.
+The analysis of different machine learning models, including KNN Classifier, Logistic Regression, Extra Trees Classifier, Random Forest, XGBoost, LGBM, and CatBoost, was conducted in this phase. The cross-validation technique was used to evaluate the actual performance of each model.
 
-Durante a análise, também foram utilizadas as Curvas de Ganhos Cumulativos, uma ferramenta de visualização. Essas curvas permitem avaliar o desempenho de um modelo de classificação ao identificar corretamente as instâncias positivas. Ao traçar a taxa acumulada de verdadeiros positivos no eixo y em relação à taxa acumulada de instâncias positivas selecionadas no eixo x, é possível compreender como o modelo se comporta em diferentes pontos do ranking de probabilidade.
-A figura abaixo apresenta as Curvas de Ganhos obtidas nos modelos testados.
-
+During the analysis, Cumulative Gain Curves, a visualization tool, were also used. These curves allow evaluating the performance of a classification model in correctly identifying positive instances. By plotting the cumulative rate of true positives on the y-axis against the cumulative rate of selected positive instances on the x-axis, it is possible to understand how the model behaves at different points of the probability ranking. The following figure presents the Cumulative Gain Curves obtained for the tested models.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/cumulative_gain_all.png" alt="cumulative_gain">
 </p>
 
-
-Também foi realizada a análise da Lift Curve, uma representação gráfica que compara a eficácia de um modelo preditivo com uma estimativa aleatória. Essa métrica é comumente utilizada em marketing e gerenciamento de relacionamento com o cliente para avaliar o desempenho de modelos projetados para prever o comportamento do cliente. A seguir, é apresentado um gráfico com as curvas de lift dos modelos testados.
+The Lift Curve analysis was also performed, which is a graphical representation that compares the effectiveness of a predictive model with a random estimate. This metric is commonly used in marketing and customer relationship management to evaluate the performance of models designed to predict customer behavior. The following graph shows the lift curves of the tested models.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/curvas_lift_all.png" alt="curvas_lift_all">
 </p>
 
-As métricas de desempenho, como Precision, Recall e F1-Score, foram utilizadas para avaliar a performance dos modelos, tanto para os modelos simples quanto para aqueles com cross-validation. A figura a seguir exibe uma tabela com os resultados obtidos por cada modelo.
+Performance metrics such as Precision, Recall, and F1-Score were used to evaluate the models' performance, both for simple models and those with cross-validation. The following table displays the results obtained by each model.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/models_CV_metrics.png" alt="models_CV_metrics">
 </p>
 
-Durante a análise dos modelos de machine learning, observamos que o CatBoostClassifier apresentou valores mais altos em métricas como precision, bem como nas curvas lift e ganhos cumulativos.
+During the analysis of machine learning models, it was observed that the CatBoostClassifier showed higher values in metrics such as precision, as well as in lift and cumulative gain curves.
 
-No entanto, ao considerar o objetivo específico deste projeto, que é gerar um ranking colocando no topo os clientes com maior probabilidade de adquirir o seguro de carro, a métrica de recall ganha maior importância. O recall mede a capacidade do modelo em identificar corretamente os clientes que realmente têm interesse em adquirir o seguro, minimizando assim a perda de oportunidades.
+However, considering the specific objective of this project, which is to generate a ranking by placing at the top the customers with the highest probability of purchasing car insurance, the recall metric gains greater importance. Recall measures the model's ability to correctly identify customers who are truly interested in acquiring the insurance, thus minimizing the loss of opportunities.
 
-Ao avaliar as métricas de recall, observamos que o XGBClassifier obteve um valor mais alto em comparação ao CatBoostClassifier. Isso indica que o modelo XGBClassifier tem uma maior capacidade de identificar e classificar corretamente os clientes propensos a adquirir o seguro de carro.
+When evaluating the recall metrics, it was observed that the XGBClassifier obtained a higher value compared to the CatBoostClassifier. This indicates that the XGBClassifier model has a greater ability to correctly identify and classify customers prone to acquiring car insurance.
 
-Portanto, mesmo considerando que o CatBoostClassifier apresentou valores superiores em métricas como precision, curva lift e ganhos cumulativos, optaremos pelo XGBClassifier devido à sua melhor performance em recall. Essa escolha é fundamentada no objetivo principal do projeto, que é maximizar a identificação dos clientes com maior probabilidade de adquirir o seguro de carro
+Therefore, even though the CatBoostClassifier showed higher values in metrics such as precision, lift curve, and cumulative gain, we will opt for the XGBClassifier due to its better recall performance. This choice is based on the project's main objective, which is to maximize the identification of customers with the highest probability of acquiring car insurance.
 
 
 ### 6.2 Hyperparameter Finetuning
-Para encontrar os melhores hiperparâmetros para o modelo XGBoost, foram aplicadas técnicas de busca de hiperparâmetros, como Bayesian Search CV e Random Search. 
+To find the best hyperparameters for the XGBoost model, hyperparameter search techniques such as Bayesian Search CV and Random Search were applied.
 
-Durante a busca de hiperparâmetros, vários parâmetros foram avaliados, incluindo o número de árvores, a profundidade máxima da árvore, a taxa de aprendizado e outros. O objetivo principal foi alcançar o melhor desempenho possível para o modelo XGBoost.
+During the hyperparameter search, several parameters were evaluated, including the number of trees, maximum tree depth, learning rate, and others. The main goal was to achieve the best possible performance for the XGBoost model.
 
-Após ajustar os hiperparâmetros, os modelos resultantes foram avaliados e comparados com o modelo testado anteriormente. Foram utilizadas métricas importantes, como Precision, Recall e F1-Score, para avaliar a capacidade do modelo de classificar corretamente as instâncias positivas e negativas.
+After tuning the hyperparameters, the resulting models were evaluated and compared to the previously tested model. Important metrics such as Precision, Recall, and F1-Score were used to assess the model's ability to correctly classify positive and negative instances.
 
-Essa etapa de ajuste de hiperparâmetros é crucial para obter um modelo com desempenho otimizado, garantindo que ele seja capaz de identificar corretamente os clientes propensos a adquirir o seguro de carro. A seleção dos melhores parâmetros permite melhorar a precisão, o recall e o F1-Score do modelo, proporcionando resultados mais confiáveis e eficazes na classificação dos clientes.
+This hyperparameter tuning step is crucial to obtain a model with optimized performance, ensuring that it can correctly identify customers who are likely to acquire car insurance. Selecting the best parameters helps improve the model's precision, recall, and F1-Score, providing more reliable and effective results in customer classification.
 
-A figura abaixo apresenta a comparação dos três modelos utilizando métricas de avaliação.
+The figure below presents the comparison of the three models using evaluation metrics.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/finetuning_xgb.png" alt="finetuning_xgb">
 </p>
 
-Após a avaliação dos resultados, o modelo XGBoost com ajuste de hiperparâmetros utilizando a técnica de Bayesian Search apresentou o melhor desempenho em termos de recall. 
+After evaluating the results, the XGBoost model with hyperparameter tuning using the Bayesian Search technique demonstrated the best performance in terms of recall.
 
 
-## 7. Avaliação e Desempenho de Negócios
-Nesta etapa, além da avaliação do desempenho do modelo de Machine Learning, foi realizada uma análise mais aprofundada dos resultados, convertendo-os em métricas de negócio relevantes para avaliar a eficácia do modelo no ranqueamento dos clientes. Foram calculados indicadores de desempenho, como Precision, Recall, F1-Score e outras métricas específicas do contexto do projeto.
+## 7. Evaluation and Business Performance
+During this stage, in addition to evaluating the performance of the Machine Learning model, a more in-depth analysis of the results was conducted, converting them into relevant business metrics to assess the effectiveness of the model in ranking customers. Performance indicators such as Precision, Recall, F1-Score, and other project-specific metrics were calculated.
 
-Além disso, foram gerados gráficos e visualizações para auxiliar na interpretação dos erros e na identificação de possíveis melhorias na performance do modelo. Essas visualizações permitiram uma análise mais detalhada dos resultados e a identificação de padrões ou tendências que poderiam afetar a eficácia do modelo na tarefa de ranqueamento dos clientes.
+Furthermore, graphs and visualizations were generated to aid in the interpretation of errors and the identification of potential improvements in the model's performance. These visualizations allowed for a more detailed analysis of the results and the identification of patterns or trends that could affect the model's effectiveness in the task of customer ranking.
 
-Essa análise mais abrangente dos resultados e a utilização de métricas de negócio relevantes proporcionaram uma compreensão mais completa do desempenho do modelo e permitiram a identificação de áreas de melhoria. Com base nessas análises, é possível realizar ajustes e refinamentos no modelo, buscando otimizar ainda mais sua performance e garantir um melhor ranqueamento dos clientes de acordo com sua probabilidade de adquirir o seguro de carro.
+This comprehensive analysis of the results and the use of relevant business metrics provided a more complete understanding of the model's performance and identified areas for improvement. Based on these analyses, adjustments and refinements can be made to the model to further optimize its performance and ensure better ranking of customers according to their probability of purchasing car insurance.
 
-### 7.1 Métricas de Desempenho do Modelo
-Durante a avaliação do modelo, várias métricas foram utilizadas para analisar o desempenho do mesmo. Entre essas métricas, temos a acurácia, precisão, recall, F1-Score e a área sob a curva ROC (ROC AUC).
+### 7.1 Model Performance Metrics
 
-A figura abaixo apresenta um gráfico com os valores das métricas obtidas pelo modelo:
+Various metrics were used to evaluate the model's performance during the evaluation process. Among these metrics, we have Accuracy, Precision, Recall, F1-Score, and the Area Under the ROC Curve (ROC AUC).
 
-- Acurácia: Mede a taxa de acertos do modelo em relação ao total de previsões realizadas.
-- Precisão: Avalia a proporção de previsões positivas corretas em relação a todas as previsões positivas feitas pelo modelo.
-- Recall: Mede a proporção de instâncias positivas corretamente identificadas em relação a todas as instâncias que realmente são positivas.
-- F1-Score: É uma métrica que combina a precisão e o recall em uma única medida, fornecendo uma avaliação balanceada do desempenho do modelo.
-- ROC AUC: A área sob a curva ROC (Receiver Operating Characteristic) é uma medida numérica que indica a capacidade do modelo de classificar corretamente as instâncias.
+The figure below presents a graph with the values of the metrics obtained by the model:
 
+- Accuracy: Measures the model's rate of correct predictions in relation to the total number of predictions made.
+- Precision: Evaluates the proportion of correct positive predictions out of all positive predictions made by the model.
+- Recall: Measures the proportion of correctly identified positive instances out of all instances that are truly positive.
+- F1-Score: A metric that combines precision and recall into a single measure, providing a balanced evaluation of the model's performance.
+- ROC AUC: The Area Under the Receiver Operating Characteristic (ROC) curve is a numerical measure that indicates the model's ability to correctly classify instances.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/model_metrics.png" alt="model_metrics">
 </p>
 
-O gráfico abaixo ilustra o poder discriminativo do modelo em identificar os clientes com maior probabilidade de compra em comparação com uma classificação aleatória. Ele representa a capacidade do modelo de distinguir entre clientes com maior propensão à compra e aqueles que não possuem essa característica. Quanto maior a distância entre a curva do modelo e a linha de referência aleatória, maior é a capacidade de classificação do modelo. 
+The graph below illustrates the discriminative power of the model in identifying customers with a higher probability of purchase compared to random classification. It represents the model's ability to distinguish between customers with a higher propensity to purchase and those who do not possess this characteristic. The greater the distance between the model's curve and the random reference line, the higher the model's classification capacity.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/cumulative_curve_xgb.png" alt="cumulative_curve_xgb">
 </p>
 
-O gráfico abaixo representa a variação do lift em relação à porcentagem acumulada da base. Essa visualização é útil para identificar que o modelo apresenta um desempenho melhor em comparação com a situação de referência. 
+The graph below represents the variation of lift in relation to the accumulated percentage of the dataset. This visualization is useful for identifying that the model performs better compared to the reference situation.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/lift_curve_xgb.png" alt="lift_curve_xgb">
 </p>
 
-Abaixo, temos a curva ROI, que permite visualizar a melhoria relativa proporcionada pelo modelo em comparação com o baseline ao longo da porcentagem acumulada da base. Essa curva é útil para avaliar o desempenho do modelo em termos de retorno esperado. A curva ROI mostra como o modelo supera as expectativas em relação à situação de referência, medida pelo baseline. Ela mostra a proporção acumulada do retorno esperado ao longo do tempo à medida que mais clientes são considerados. 
+Below, we have the ROI curve, which allows visualizing the relative improvement provided by the model compared to the baseline over the accumulated percentage of the dataset. This curve is useful for evaluating the model's performance in terms of expected return. The ROI curve shows how the model outperforms expectations compared to the reference situation measured by the baseline. It shows the cumulative proportion of the expected return over time as more customers are considered.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/roi_curve_xgb.png" alt="roi_curve_xgb">
 </p>
 
 
-### 7.2 Bussiness Metrics
-A fim de avaliar o desempenho do negócio, foi desenvolvido um código que realiza o cálculo da porcentagem de clientes a serem contatados, determina a pontuação mínima e calcula a diferença de lucros entre o método tradicional e o modelo utilizado.
+### 7.2 Business Metrics
+In order to evaluate the business performance, a code was developed to calculate the percentage of customers to be contacted, determine the minimum score, and calculate the profit difference between the traditional method and the model used.
 
-A avaliação é baseada no preço do produto e no custo da operação por cliente. Além disso, é necessária a obtenção de uma lista de clientes ordenada de acordo com a pontuação atribuída pelo modelo.
+The evaluation is based on the product price and the cost of operation per customer. Additionally, obtaining a list of customers ordered according to the score assigned by the model is necessary.
 
-Detalhes do Cálculo:
+Calculation Details:
 
-- Preço do seguro do veículo: $550,00
-- Custo para contactar o cliente: $40,00
-
-Na imagem abaixo podemos observar que é recomendado entrar em contato com 47% dos clientes, ordenados de acordo com a pontuação atribuída pelo modelo. Portanto, é estabelecido um limiar de pontuação de 0,02 para determinar quais clientes devem ser contatados.
-
+- Vehicle insurance price: $550.00
+- Cost to contact the customer: $40.00
+- 
+In the image below, we can observe that it is recommended to contact 47% of the customers, sorted according to the score assigned by the model. Therefore, a score threshold of 0.02 is established to determine which customers should be contacted.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/best_profit.png" alt="best_profit">
 </p>
 
-Ao focar apenas nos clientes com maior propensão a comprar, a empresa tem a possibilidade de reduzir os custos de chamadas desnecessárias. Como resultado, a operação se torna 72,13% mais rentável devido à economia de custos obtida, como podemos ver no gráfico abaixo.
-    
+By focusing only on customers with a higher propensity to purchase, the company has the opportunity to reduce unnecessary call costs. As a result, the operation becomes 72.13% more profitable due to the cost savings obtained, as shown in the graph below.
+
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/selected_all_customers.png" alt="selected_all_customers">
 </p>
 
 ## 8. Deployment
-Após a validação do modelo de geração de ranking, o próximo passo foi disponibilizá-lo aos usuários finais por meio de uma API. Essa API foi desenvolvida utilizando o módulo Flask e está contida no arquivo 'handler.py'. Com essa API, os usuários têm a capacidade de obter o ranking dos clientes com scores precisos e atualizados.
+After validating the ranking generation model, the next step was to make it available to end users through an API. This API was developed using the Flask module and is contained in the 'handler.py' file. With this API, users have the ability to obtain rankings of customers with accurate and up-to-date scores.
 
-A API é responsável por carregar o modelo treinado e a classe HealthInsurance foi criada para preparar e transformar os dados necessários antes de serem fornecidos ao modelo para a geração dos scores. Essa preparação e transformação garantem que os dados estejam em um formato adequado para serem processados pelo modelo.
+The API is responsible for loading the trained model, and the HealthInsurance class was created to prepare and transform the necessary data before being provided to the model for score generation. This preparation and transformation ensure that the data is in a suitable format to be processed by the model.
 
-O modelo selecionado foi implantado em um ambiente de nuvem, tornando-o acessível para outras pessoas ou serviços. Isso permite que eles utilizem os resultados gerados pelo modelo para aprimorar a tomada de decisões de negócios. Para facilitar o acesso e o compartilhamento dos resultados, utilizamos o Google Sheets, uma plataforma que permite o armazenamento e a visualização dos dados gerados pelo modelo em tempo real. Dessa forma, as informações estão disponíveis de maneira rápida e prática para os usuários que necessitam delas, facilitando a colaboração e a utilização dos resultados em diferentes contextos de negócios.
+The selected model was deployed in a cloud environment, making it accessible to other individuals or services. This allows them to use the results generated by the model to enhance business decision-making. To facilitate access and sharing of the results, we used Google Sheets, a platform that allows storage and real-time visualization of the data generated by the model. This way, the information is quickly and conveniently available to users who need it, facilitating collaboration and utilization of the results in different business contexts.
 
 <p align="center">
   <img src="https://github.com/raquelEllem/health_insurance/blob/main/img/deploy_healthInsuance.png" alt="deploy_healthInsuance" width="500">
 </p>
 
+The final product is a spreadsheet document linked to the deployed machine learning model. This document provides a list of customers with a probability of purchasing car insurance, based on the predictions made by the model. To obtain the predictions, simply enter the customer data, click on "Health Insurance Prediction" - "Get Prediction".
+
+The spreadsheet has been integrated with the deployed model, allowing the scoring of each customer and generating a prediction. Additionally, customers are reorganized based on their scores, creating a ranking that indicates the order in which they should receive the offer.
+
+Within the spreadsheet, customers who have a higher probability of purchasing car insurance are highlighted, allowing for a quick visual identification of the target customers. This integration between the spreadsheet and the model provides a more efficient approach to selecting customers for the offer, maximizing the chances of success for the sales campaign. See the functionality in the demonstration below:
+
+![gif bot](https://github.com/raquelEllem/health_insurance/blob/main/img/gif_func.gif) 
 
 
-O produto final é um documento de planilha vinculado ao modelo de aprendizado de máquina implantado. Este documento fornece uma lista de clientes com probabilidade de comprar seguro de carro, com base nas previsões feitas pelo modelo. Para obter as previsões, basta inserir os dados do cliente, clicar em "Health Insurance Prediction" - "Get Prediction". Assim a planilha se conectará com o modelo implantado e retornará a pontuação, com a previsão, destacando os clientes que devem receber a oferta. Essa integração entre a planilha e o modelo permite uma análise fácil e eficiente dos clientes com maior potencial de compra, auxiliando nas estratégias de oferta e aumentando as chances de sucesso nas vendas. 
-Veja o funcionamento na demonstração abaixo:
+## 9. Conclusion
+Based on the results of this project, it can be concluded that the trained model is a precise and reliable tool for generating a ranking of customers with a higher probability of purchasing car insurance. Developed with the XGBoost algorithm, the model achieved improved recall after fine-tuning, indicating its effectiveness in identifying potential customers.
 
-# DEMO funcionamento
+Furthermore, the project demonstrated significant cost savings by reducing unnecessary call-related expenses, resulting in a 72.13% less costly operation. This highlights the potential of the trained model as a valuable tool for the sales and finance teams.
 
+Another relevant aspect is the acquisition of valuable insights for further improvements, such as identifying sales channels with higher returns. This information can guide future strategic decisions of the company, generating additional improvements and potential savings.
 
-## 9. Conclusão
-Com base nos resultados deste projeto, conclui-se que o modelo treinado é uma ferramenta precisa e confiável para gerar um ranking dos clientes com maior probabilidade de adquirir o seguro de carro. Desenvolvido com o algoritmo XGBoost, o modelo obteve um melhor recall após o ajuste fino, o que indica sua eficácia na identificação dos clientes potenciais.
-
-Além disso, o projeto demonstrou uma economia significativa ao reduzir os custos relacionados às chamadas desnecessárias, resultando em uma operação 72,13% menos onerosa. Isso destaca o potencial do modelo treinado como uma ferramenta valiosa para a equipe comercial e financeira.
-
-Outro aspecto relevante é a obtenção de insights valiosos para melhorias adicionais, como a identificação dos canais de vendas com maior retorno. Essas informações podem guiar futuras decisões estratégicas da empresa, gerando melhorias adicionais e possíveis economias.
-
-Em resumo, este projeto ilustra como a análise de dados pode trazer benefícios tangíveis e substanciais para as empresas, permitindo uma tomada de decisão mais eficiente e informada.
+In summary, this project illustrates how data analysis can bring tangible and substantial benefits to companies, enabling more efficient and informed decision-making.
 
 
-## 10. Próximos passos
-- Coletar novos dados: Continuar a busca por dados relevantes que possam contribuir para o aprimoramento do modelo. Isso envolve expandir a base de dados atual, procurar novas fontes de dados e coletar informações específicas que possam aumentar o desempenho do modelo.
-- Explorar diferentes combinações de recursos:  Investigar várias combinações de recursos disponíveis nos dados. Isso inclui criar novas variáveis, selecionar as mais relevantes e transformar as existentes para melhorar o desempenho geral do modelo.
-- Refinamento do modelo: Realizar ajustes e refinamentos no modelo atual. Isso abrange a otimização de hiperparâmetros, a experimentação com diferentes algoritmos de machine learning, a avaliação de técnicas de regularização e até mesmo a consideração de abordagens avançadas, como o uso de deep learning, para alcançar um desempenho ainda melhor.
-- Incorporação de feedback do usuário: Coletar feedback dos usuários finais do modelo e utilizar suas sugestões e necessidades para aprimorar continuamente o modelo. Isso envolve a realização de sessões de revisão e feedback, identificação de lacunas e áreas de melhoria, e implementação de ajustes com base nas informações fornecidas pelos usuários.
+## 10. Next Steps
+
+- Collecting new data: Continue the search for relevant data that can contribute to the improvement of the model. This involves expanding the current database, looking for new data sources, and collecting specific information that can enhance the model's performance.
+- Explore different feature combinations: Investigate various combinations of features available in the data. This includes creating new variables, selecting the most relevant ones, and transforming existing ones to improve the overall performance of the model.
+- Model refinement: Make adjustments and refinements to the current model. This includes hyperparameter optimization, experimenting with different machine learning algorithms, evaluating regularization techniques, and even considering advanced approaches such as using deep learning to achieve even better performance.
+- Incorporating user feedback: Collect feedback from end users of the model and use their suggestions and needs to continuously improve the model. This involves conducting review and feedback sessions, identifying gaps and areas for improvement, and implementing adjustments based on the information provided by users.
+
 
 
 
