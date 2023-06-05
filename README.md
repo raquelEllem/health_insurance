@@ -64,7 +64,7 @@ My strategy to solve this challenge was as follows:
     
 **1.3 Variable Filtering:** In this step, the aim is to filter the data to remove irrelevant or duplicate information. This helps reduce the complexity of the data and improve the efficiency of the model.
     
-**1.4Exploratory Data Analysis:** Here, a more in-depth exploration of the data is conducted to identify patterns, trends, and relevant insights. This may involve visualizing the data, analyzing correlations between variables, and identifying potential relationships between the attributes and the target variable.
+**1.4 Exploratory Data Analysis:** Here, a more in-depth exploration of the data is conducted to identify patterns, trends, and relevant insights. This may involve visualizing the data, analyzing correlations between variables, and identifying potential relationships between the attributes and the target variable.
 
 #### 2. Data Preparation
 
@@ -160,7 +160,7 @@ Encoding is an important step when dealing with categorical variables. It involv
 After applying these transformations, the resulting objects were saved in pickle format. This way, the data preparation in this phase aimed to ensure that Machine Learning models have access to transformed data in an appropriate manner, facilitating their learning and application in future situations.
 
 ### 5.2 Feature Selection
-DDuring this phase, we performed the selection of the most significant attributes for model training. To achieve this, several strategies were adopted. Firstly, we removed columns considered irrelevant for the analysis. Then, we divided the data into training and testing sets to evaluate the model's performance on previously unseen data.
+During this phase, we performed the selection of the most significant attributes for model training. To achieve this, several strategies were adopted. Firstly, we removed columns considered irrelevant for the analysis. Then, we divided the data into training and testing sets to evaluate the model's performance on previously unseen data.
 
 Additionally, we used the Boruta method, which aims to identify the most relevant features for the model. However, the results obtained with Boruta were not satisfactory, as only one feature was selected. To overcome this situation, we employed the ExtraTreesClassifier algorithm together with the forest.feature_importances_ property. This approach allowed us to identify the most relevant features, and thus we selected the first seven as attributes for the model.
 
@@ -273,7 +273,7 @@ Calculation Details:
 
 - Vehicle insurance price: $550.00
 - Cost to contact the customer: $40.00
-- 
+
 In the image below, we can observe that it is recommended to contact 47% of the customers, sorted according to the score assigned by the model. Therefore, a score threshold of 0.02 is established to determine which customers should be contacted.
 
 <p align="center">
